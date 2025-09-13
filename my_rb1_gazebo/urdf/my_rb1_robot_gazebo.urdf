@@ -28,7 +28,7 @@
         <inertial>
             <mass value="24.72479" />
             <origin xyz="0 0 0" rpy="0 0 0" />
-            <inertia ixx="0.28202" ixy="0" ixz="0" iyy="0.28202" iyz="0" izz="0.77265" />
+            <inertia ixx="0.57176" ixy="0" ixz="0" iyy="0.57176" iyz="0" izz="0.77265" />
         </inertial>
 
         <visual>
@@ -253,6 +253,20 @@
                 </friction>
             </surface>
         </collision>
+    </gazebo>
+
+    <!-- ################# Preserve Fixed joints ############### -->
+
+    <gazebo reference="base_link_front_caster_joint">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
+
+    <gazebo reference="base_link_back_caster_joint">
+        <preserveFixedJoint>true</preserveFixedJoint>
+    </gazebo>
+
+    <gazebo reference="base_link_front_laser_joint">
+        <preserveFixedJoint>true</preserveFixedJoint>
     </gazebo>
 
 </robot>

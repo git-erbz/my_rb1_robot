@@ -44,14 +44,14 @@ print(str(base_mass) +', '+ str(wheel_mass) +', '+ str(caster_mass) +', '+ str(l
 # claculation for Inertial moments
 print(" ")
 ## Base 
-base_ixx = (1/12) * base_mass * (3*base_r**3 + base_h**2)
+base_ixx = (1/12) * base_mass * (3*base_r**2 + base_h**2)
 base_iyy = base_ixx
 base_izz = 0.5  *base_mass * base_r**2
 string = "base inertials: "
 print(string, base_ixx, base_iyy, base_izz)
 
 ## wheel
-wheel_ixx = (1/12) * wheel_mass * (3*wheel_r**3 + wheel_h**2)
+wheel_ixx = (1/12) * wheel_mass * (3*wheel_r**2 + wheel_h**2)
 wheel_iyy = wheel_ixx
 wheel_izz = 0.5  *wheel_mass * wheel_r**2
 string = "wheel inertials: "
