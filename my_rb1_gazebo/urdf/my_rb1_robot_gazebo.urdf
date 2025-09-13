@@ -97,7 +97,7 @@
     </link>
 
     <joint name="base_link_right_wheel_joint" type="continuous">
-        <origin rpy="1.5708 0.0 0.0" xyz="0.0 -0.2 -0.15" />
+        <origin rpy="-1.5708 0.0 0.0" xyz="0.0 -0.2 -0.15" />
         <child link="right_wheel"/>
         <parent link="base_link"/>
         <axis xyz="0 0 1"/>
@@ -300,13 +300,13 @@
         </plugin>
     </gazebo>
 
-    <gazebo reference="link_laser_scan">
+    <gazebo reference="front_laser">
     <sensor type="gpu_lidar" name="head_hokuyo_sensor">
         <pose relative_to='front_laser'>0 0 0 0 0 0</pose>
         <always_on>1</always_on>
         <visualize>true</visualize>
         <update_rate>20</update_rate>
-        <topic>/laser/scan</topic>
+        <topic>/scan</topic>
         <ray>
             <scan>
                 <horizontal>
