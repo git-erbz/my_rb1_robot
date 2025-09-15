@@ -3,6 +3,7 @@ from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.substitutions import Command
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 
 # ROS2 Launch System will look for this function definition #
 def generate_launch_description():
@@ -31,9 +32,14 @@ def generate_launch_description():
         name='robot_state_publisher_node',
         output="screen",
         emulate_tty=True,
-        parameters=[{'use_sim_time': True, 
-                     'robot_description': Command(['xacro ', robot_desc_path])}]
-    )
+        parameters=[{
+            "use_sim_time": True,
+            "robot_description": ParameterValue(
+                Command(["xacro ", robot_desc_path]),
+                value_type=str
+        )
+    }],
+)
 
     # Load RViz Configuration File #
     rviz_config_file = "config.rviz"
